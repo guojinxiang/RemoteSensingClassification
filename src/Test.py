@@ -1,4 +1,4 @@
-from bias_neural_network import bias_neural_network
+from bias_neural_network import BNN
 
 image_shape = (32, 32, 3)
-network = bias_neural_network(image_shape=image_shape)
+network = BNN(image_shape=image_shape)
