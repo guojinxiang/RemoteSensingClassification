@@ -23,5 +23,4 @@ def BNN(rgb_shape, height_shape, aux_shape, inputs, labes):
     model = Model(inputs=[rgb_input, height_input, aux_input], outputs=[rgb_output, height_output, aux_output])
     model.compile(optimizer='sgd', loss='binary_crossentropy', metrics=['accuracy'], loss_weights=[0.3, 0.3, 0.4])
     model.fit(inputs, labes, epochs=50, validation_split=0.2)
-
     return model
