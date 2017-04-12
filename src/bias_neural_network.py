@@ -21,6 +21,7 @@ def BNN(rgb_shape, height_shape, aux_shape, inputs, labes):
     aux_output = Dense(units=1, activation='sigmoid')(aux_conv)
 
     model = Model(inputs=[rgb_input, height_input, aux_input], outputs=[rgb_output, height_output, aux_output])
-    model.compile(optimizer='rmsprop', loss='binary_crossentropy', loss_weights=[0.3, 0.3, 0.4])
+    model.compile(optimizer='sgd', loss='binary_crossentropy', metrics=['accuracy'], loss_weights=[0.3, 0.3, 0.4])
     model.fit(inputs, labes, epochs=50, validation_split=0.2)
+
     return model
