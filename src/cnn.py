@@ -1,12 +1,12 @@
 from keras.layers import Convolution2D, MaxPooling2D
-from keras.layers import Dropout, Dense
+from keras.layers import Dropout, Dense, Flatten
 from keras.models import Sequential
 
 
-def CNN(shape, inputs, labels):
+def CNN(train_data, validation_data):
     model = Sequential()
 
-    model.add(Convolution2D(32, (3, 3), input_shape=shape, activation='relu'))
+    model.add(Convolution2D(32, (3, 3), input_shape=(25, 25, 3), activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
     model.add(Convolution2D(32, (3, 3), activation='relu'))
@@ -14,11 +14,13 @@ def CNN(shape, inputs, labels):
 
     model.add(Convolution2D(64, (3, 3), activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))
-
+    # this converts our 3D feature maps to 1D feature vectors
+    model.add(Flatten())
     model.add(Dense(64, activation='relu'))
     model.add(Dropout(0.5))
     model.add(Dense(1, activation='sigmoid'))
 
     model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
-    model.fit(inputs, labels, epochs=50)
+    model.fit_generator(train_data, steps_per_epoch=100, epochs=50, validation_data=validation_data,
+                        validation_steps=100)
     return model

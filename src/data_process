@@ -14,6 +14,6 @@ labels = np.concatenate((label_set_1, label_set_2))
 for i in range(len(data_set)):
     img = Image.fromarray(data_set[i].reshape(shape))
     if labels[i] == 0:
-        img.save('../resources/negative/' + str(i) + '.jpg')
+        img.save('../resources/data/train/negative/' + str(i) + '.jpg')
     else:
-        img.save('../resources/positive/' + str(i) + '.jpg')
+        img.save('../resources/data/train/positive/' + str(i) + '.jpg')

@@ -1,16 +1,12 @@
-import numpy as np
-import scipy.io as sio
+from keras.preprocessing.image import ImageDataGenerator
 
 from cnn import CNN
 
-train_set_1 = sio.loadmat('../resources/training_instance_matrix.mat')['training_instance_matrix']
-label_set_1 = sio.loadmat('../resources/training_label_vector.mat')['training_label_vector']
-train_set_2 = sio.loadmat('../resources/training_instance_matrix2.mat')['training_instance_matrix2']
-label_set_2 = sio.loadmat('../resources/training_label_vector2.mat')['training_label_vector2']
-shape = (25 * 25)
+train_datagen = ImageDataGenerator(rescale=1. / 255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
+test_datagen = ImageDataGenerator(rescale=1. / 255)
+train_generator = train_datagen.flow_from_directory('../resources/data/train', target_size=(25, 25),
+                                                    class_mode='binary')
+validation_generator = test_datagen.flow_from_directory('../resources/data/validation', target_size=(25, 25),
+                                                        class_mode='binary')
 
-inputs = np.concatenate((train_set_1, train_set_2))
-labels = np.concatenate((label_set_1, label_set_2))
-
-# network = BNN(shape, inputs, labels)
-network = CNN(shape, inputs, labels)
+model = CNN(train_generator, validation_generator)
