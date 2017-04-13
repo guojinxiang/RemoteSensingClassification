@@ -1,18 +1,16 @@
 import numpy as np
+import scipy.io as sio
 
-from bias_neural_network import BNN
+from cnn import CNN
 
-rgb_shape = (32, 32, 3)
-height_shape = (32, 32, 1)
-aux_shape = (32, 32, 1)
+train_set_1 = sio.loadmat('../resources/training_instance_matrix.mat')['training_instance_matrix']
+label_set_1 = sio.loadmat('../resources/training_label_vector.mat')['training_label_vector']
+train_set_2 = sio.loadmat('../resources/training_instance_matrix2.mat')['training_instance_matrix2']
+label_set_2 = sio.loadmat('../resources/training_label_vector2.mat')['training_label_vector2']
+shape = (25 * 25)
 
-rgb_inputs = np.array([1, 2, 3])
-height_inputs = np.array([1, 2, 3])
-aux_inputs = np.array([1, 2, 3])
-inputs = [rgb_inputs, height_inputs, aux_inputs]
+inputs = np.concatenate((train_set_1, train_set_2))
+labels = np.concatenate((label_set_1, label_set_2))
 
-rgb_labes = np.array([1, 2, 3])
-height_labes = np.array([1, 2, 3])
-aux_labes = np.array([1, 2, 3])
-labes = [rgb_labes, height_labes, aux_labes]
-network = BNN(rgb_shape, height_shape, aux_shape, inputs, labes)
+# network = BNN(shape, inputs, labels)
+network = CNN(shape, inputs, labels)
