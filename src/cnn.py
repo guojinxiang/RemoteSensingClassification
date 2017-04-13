@@ -3,7 +3,7 @@ from keras.layers import Dropout, Dense, Flatten
 from keras.models import Sequential
 
 
-def CNN(train_data, validation_data):
+def CNN():
     model = Sequential()
 
     model.add(Convolution2D(32, (3, 3), input_shape=(25, 25, 3), activation='relu'))
@@ -21,6 +21,4 @@ def CNN(train_data, validation_data):
     model.add(Dense(1, activation='sigmoid'))
 
     model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
-    model.fit_generator(train_data, steps_per_epoch=100, epochs=50, validation_data=validation_data,
-                        validation_steps=100)
     return model
