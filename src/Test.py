@@ -39,7 +39,7 @@ while test_img.size[0] >= 25 and test_img.size[1] >= 25:
     # scale用来控制图像缩放的尺度，每次缩小为原先的1/1.1倍
     scale += 0.1
     # 注意要向下取整，因为resize的参数必须是整数
-    test_img = test_img.resize((int(test_img.size[0] / scale), int(test_img.size[0] / scale)))
+    test_img = test_img.resize((int(test_img.size[0] / scale), int(test_img.size[1] / scale)))
 
 # 需要转成numpy数组，因为非极大值抑制需要传入numpy数组
 boxs = np.array(boxs)
@@ -52,7 +52,7 @@ img = Image.open('../resources/testimg2.jpg')
 draw = ImageDraw.Draw(img)
 for box in boxs:
     draw.rectangle([(box[0], box[1]), (box[2], box[3])])
-# del draw
-img.show()
+
+# img.show()
 img.save('../resources/testimg2_multi_scale_result.jpg')
 print('prediction completed')
