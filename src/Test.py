@@ -11,7 +11,7 @@ model = CNN()
 model.load_weights('../resources/cnn.h5')
 
 # 转为灰度图
-test_img = Image.open('../resources/testimg2.jpg').convert('L')
+test_img = Image.open('../resources/testimg.jpg').convert('L')
 # test_img.show()
 # print(test_img.size,test_img.mode)
 # print(test_img.crop(box=(0, 0, 25, 25)).mode,test_img.crop(box=(0, 0, 25, 25)).size)
@@ -48,11 +48,11 @@ print(str(len(boxs)) + ' boxs extracted')
 # 进行非极大值抑制,认为两个box达到10%的覆盖就可以执行抑制，只留下一个了
 boxs = non_max_suppression(boxs, overlapThresh=0.1)
 print(str(len(boxs)) + ' boxs kept')
-img = Image.open('../resources/testimg2.jpg')
+img = Image.open('../resources/testimg.jpg')
 draw = ImageDraw.Draw(img)
 for box in boxs:
     draw.rectangle([(box[0], box[1]), (box[2], box[3])])
 
 # img.show()
-img.save('../resources/testimg2_multi_scale_result.jpg')
+img.save('../resources/testimg_multi_scale_result.jpg')
 print('prediction completed')
