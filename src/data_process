@@ -12,7 +12,9 @@ data_set = np.concatenate((train_set_1, train_set_2))
 labels = np.concatenate((label_set_1, label_set_2))
 
 for i in range(len(data_set)):
-    img = Image.fromarray(data_set[i].reshape(shape))
+    # 一定要保存为灰度图像，因为训练数据集本身就是灰度图
+    img = Image.fromarray(data_set[i].reshape(shape), mode='L')
+    # print(img.mode,img.size)
     if labels[i] == 0:
         img.save('../resources/data/train/negative/' + str(i) + '.jpg')
     else:
