@@ -5,8 +5,8 @@ from keras.models import Sequential
 
 def CNN():
     model = Sequential()
-
-    model.add(Convolution2D(32, (3, 3), input_shape=(25, 25, 3), activation='relu'))
+    # 读入的图片尺寸是灰度图，只有一个通道
+    model.add(Convolution2D(32, (3, 3), input_shape=(25, 25, 1), activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
     model.add(Convolution2D(32, (3, 3), activation='relu'))
