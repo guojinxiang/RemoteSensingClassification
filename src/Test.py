@@ -2,6 +2,7 @@ import numpy as np
 from PIL import Image
 
 from cnn import CNN
+from non_max_suppression import non_max_suppression
 
 # 载入模型
 model = CNN()
@@ -28,4 +29,5 @@ for i in range(test_img.size[0] - 25):
             boxs.append([i, j, i + 25, j + 25])
             # print(boxs)
 
-# 进行非极大值抑制
+# 进行非极大值抑制,认为两个box达到30%的覆盖就可以执行抑制，只留下一个了
+real_boxs = non_max_suppression(boxs, overlapThresh=0.3)
