@@ -1,5 +1,5 @@
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 
 from cnn import CNN
 from non_max_suppression import non_max_suppression
@@ -29,5 +29,18 @@ for i in range(test_img.size[0] - 25):
             boxs.append([i, j, i + 25, j + 25])
             # print(boxs)
 
+# 需要转成numpy数组，因为非极大值抑制需要传入numpy数组
+boxs = np.array(boxs)
+print(str(len(boxs)) + ' boxs extracted')
+
 # 进行非极大值抑制,认为两个box达到30%的覆盖就可以执行抑制，只留下一个了
-real_boxs = non_max_suppression(boxs, overlapThresh=0.3)
+boxs = non_max_suppression(boxs, overlapThresh=0.3)
+print(str(len(boxs)) + ' boxs kept')
+img = Image.open('../resources/testimg.jpg')
+draw = ImageDraw.Draw(img)
+for box in boxs:
+    draw.rectangle(box)
+# del draw
+img.show()
+img.save('../resources/testimg_result.jpg')
+print('prediction completed')
