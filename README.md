@@ -1,2 +1,2 @@
-# bias_neural_network
-本科毕设时提出的偏置神经网络
+# remote_sensing_classification
+本科毕设时做的遥感影像分类
