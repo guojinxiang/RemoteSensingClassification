@@ -1,0 +1,73 @@
+Confusion Matrix: C:\Users\left thomas\Downloads\can_tmr_class_svm  
+  
+Overall Accuracy = (2226/2346)  94.8849%  
+Kappa Coefficient = 0.9376  
+  
+                  Ground Truth (Pixels)  
+    Class             林地         耕地         草地         裸地         沙地  
+ Unclassified            0            0            0            0            0  
+         林地          418            2           35            0            0  
+         耕地            0          462            0            0            0  
+    草地/灌木            1            0          274            3            0  
+         裸地            0            0           74          539            3  
+         沙地            0            1            0            0          248  
+         其他            0            0            0            0            0  
+        Total          419          465          383          542          251  
+  
+  
+                  Ground Truth (Pixels)  
+    Class             其他        Total  
+ Unclassified            0            0  
+         林地            1          456  
+         耕地            0          462  
+    草地/灌木            0          278  
+         裸地            0          616  
+         沙地            0          249  
+         其他          285          285  
+        Total          286         2346  
+  
+  
+                 Ground Truth (Percent)  
+    Class             林地         耕地         草地         裸地         沙地  
+ Unclassified         0.00         0.00         0.00         0.00         0.00  
+         林地        99.76         0.43         9.14         0.00         0.00  
+         耕地         0.00        99.35         0.00         0.00         0.00  
+    草地/灌木         0.24         0.00        71.54         0.55         0.00  
+         裸地         0.00         0.00        19.32        99.45         1.20  
+         沙地         0.00         0.22         0.00         0.00        98.80  
+         其他         0.00         0.00         0.00         0.00         0.00  
+        Total       100.00       100.00       100.00       100.00       100.00  
+  
+  
+                 Ground Truth (Percent)  
+    Class             其他        Total  
+ Unclassified         0.00         0.00  
+         林地         0.35        19.44  
+         耕地         0.00        19.69  
+    草地/灌木         0.00        11.85  
+         裸地         0.00        26.26  
+         沙地         0.00        10.61  
+         其他        99.65        12.15  
+        Total       100.00       100.00  
+  
+  
+  
+        Class   Commission     Omission          Commission            Omission  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+         林地         8.33         0.24              38/456               1/419  
+         耕地         0.00         0.65               0/462               3/465  
+    草地/灌木         1.44        28.46               4/278             109/383  
+         裸地        12.50         0.55              77/616               3/542  
+         沙地         0.40         1.20               1/249               3/251  
+         其他         0.00         0.35               0/285               1/286  
+  
+  
+        Class   Prod. Acc.    User Acc.          Prod. Acc.           User Acc.  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+         林地        99.76        91.67             418/419             418/456  
+         耕地        99.35       100.00             462/465             462/462  
+    草地/灌木        71.54        98.56             274/383             274/278  
+         裸地        99.45        87.50             539/542             539/616  
+         沙地        98.80        99.60             248/251             248/249  
+         其他        99.65       100.00             285/286             285/285  
+

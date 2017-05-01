@@ -1,0 +1,73 @@
+Confusion Matrix: C:\Users\LEFTTH~1\AppData\Local\Temp\ann  
+  
+Overall Accuracy = (542/2346)  23.1032%  
+Kappa Coefficient = 0.0000  
+  
+                  Ground Truth (Pixels)  
+    Class             林地         耕地         草地         裸地         沙地  
+ Unclassified            0            0            0            0            0  
+         林地            0            0            0            0            0  
+         耕地            0            0            0            0            0  
+    草地/灌木            0            0            0            0            0  
+         裸地          419          465          383          542          251  
+         沙地            0            0            0            0            0  
+         其他            0            0            0            0            0  
+        Total          419          465          383          542          251  
+  
+  
+                  Ground Truth (Pixels)  
+    Class             其他        Total  
+ Unclassified            0            0  
+         林地            0            0  
+         耕地            0            0  
+    草地/灌木            0            0  
+         裸地          286         2346  
+         沙地            0            0  
+         其他            0            0  
+        Total          286         2346  
+  
+  
+                 Ground Truth (Percent)  
+    Class             林地         耕地         草地         裸地         沙地  
+ Unclassified         0.00         0.00         0.00         0.00         0.00  
+         林地         0.00         0.00         0.00         0.00         0.00  
+         耕地         0.00         0.00         0.00         0.00         0.00  
+    草地/灌木         0.00         0.00         0.00         0.00         0.00  
+         裸地       100.00       100.00       100.00       100.00       100.00  
+         沙地         0.00         0.00         0.00         0.00         0.00  
+         其他         0.00         0.00         0.00         0.00         0.00  
+        Total       100.00       100.00       100.00       100.00       100.00  
+  
+  
+                 Ground Truth (Percent)  
+    Class             其他        Total  
+ Unclassified         0.00         0.00  
+         林地         0.00         0.00  
+         耕地         0.00         0.00  
+    草地/灌木         0.00         0.00  
+         裸地       100.00       100.00  
+         沙地         0.00         0.00  
+         其他         0.00         0.00  
+        Total       100.00       100.00  
+  
+  
+  
+        Class   Commission     Omission          Commission            Omission  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+         林地         0.00       100.00                 0/0             419/419  
+         耕地         0.00       100.00                 0/0             465/465  
+    草地/灌木         0.00       100.00                 0/0             383/383  
+         裸地        76.90         0.00           1804/2346               0/542  
+         沙地         0.00       100.00                 0/0             251/251  
+         其他         0.00       100.00                 0/0             286/286  
+  
+  
+        Class   Prod. Acc.    User Acc.          Prod. Acc.           User Acc.  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+         林地         0.00         0.00               0/419                 0/0  
+         耕地         0.00         0.00               0/465                 0/0  
+    草地/灌木         0.00         0.00               0/383                 0/0  
+         裸地       100.00        23.10             542/542            542/2346  
+         沙地         0.00         0.00               0/251                 0/0  
+         其他         0.00         0.00               0/286                 0/0  
+
