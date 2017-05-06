@@ -19,7 +19,7 @@ from shapely.wkt import loads as wkt_loads
 from sklearn.metrics import jaccard_similarity_score
 
 N_Cls = 10
-inDir = '/home/n01z3/dataset/dstl'
+inDir = '/home/left/workspace/dstl'
 DF = pd.read_csv(inDir + '/train_wkt_v4.csv')
 GS = pd.read_csv(inDir + '/grid_sizes.csv', names=['ImageId', 'Xmax', 'Ymin'], skiprows=1)
 SB = pd.read_csv(os.path.join(inDir, 'sample_submission.csv'))
@@ -28,7 +28,6 @@ smooth = 1e-12
 
 
 def _convert_coordinates_to_raster(coords, img_size, xymax):
-    # __author__ = visoft
     # https://www.kaggle.com/visoft/dstl-satellite-imagery-feature-detection/export-pixel-wise-mask
     Xmax, Ymax = xymax
     H, W = img_size
@@ -43,14 +42,12 @@ def _convert_coordinates_to_raster(coords, img_size, xymax):
 
 
 def _get_xmax_ymin(grid_sizes_panda, imageId):
-    # __author__ = visoft
     # https://www.kaggle.com/visoft/dstl-satellite-imagery-feature-detection/export-pixel-wise-mask
     xmax, ymin = grid_sizes_panda[grid_sizes_panda.ImageId == imageId].iloc[0, 1:].astype(float)
     return (xmax, ymin)
 
 
 def _get_polygon_list(wkt_list_pandas, imageId, cType):
-    # __author__ = visoft
     # https://www.kaggle.com/visoft/dstl-satellite-imagery-feature-detection/export-pixel-wise-mask
     df_image = wkt_list_pandas[wkt_list_pandas.ImageId == imageId]
     multipoly_def = df_image[df_image.ClassType == cType].MultipolygonWKT
@@ -62,7 +59,6 @@ def _get_polygon_list(wkt_list_pandas, imageId, cType):
 
 
 def _get_and_convert_contours(polygonList, raster_img_size, xymax):
-    # __author__ = visoft
     # https://www.kaggle.com/visoft/dstl-satellite-imagery-feature-detection/export-pixel-wise-mask
     perim_list = []
     interior_list = []
@@ -81,7 +77,6 @@ def _get_and_convert_contours(polygonList, raster_img_size, xymax):
 
 
 def _plot_mask_from_contours(raster_img_size, contours, class_value=1):
-    # __author__ = visoft
     # https://www.kaggle.com/visoft/dstl-satellite-imagery-feature-detection/export-pixel-wise-mask
     img_mask = np.zeros(raster_img_size, np.uint8)
     if contours is None:
