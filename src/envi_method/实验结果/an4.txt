@@ -1,0 +1,41 @@
+Confusion Matrix: C:\Users\LEFTTH~1\AppData\Local\Temp\na4  
+  
+Overall Accuracy = (2029/3320)  61.1145%  
+Kappa Coefficient = 0.3988  
+  
+                  Ground Truth (Pixels)  
+    Class           阔叶林         灌木         草地         裸地        Total  
+ Unclassified            0            0            0            0            0  
+       阔叶林          751           18            0            0          769  
+         灌木           29         1278          465          764         2536  
+         草地            0            0            0           15           15  
+         裸地            0            0            0            0            0  
+        Total          780         1296          465          779         3320  
+  
+  
+                 Ground Truth (Percent)  
+    Class           阔叶林         灌木         草地         裸地        Total  
+ Unclassified         0.00         0.00         0.00         0.00         0.00  
+       阔叶林        96.28         1.39         0.00         0.00        23.16  
+         灌木         3.72        98.61       100.00        98.07        76.39  
+         草地         0.00         0.00         0.00         1.93         0.45  
+         裸地         0.00         0.00         0.00         0.00         0.00  
+        Total       100.00       100.00       100.00       100.00       100.00  
+  
+  
+  
+        Class   Commission     Omission          Commission            Omission  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+       阔叶林         2.34         3.72              18/769              29/780  
+         灌木        49.61         1.39           1258/2536             18/1296  
+         草地       100.00       100.00               15/15             465/465  
+         裸地         0.00       100.00                 0/0             779/779  
+  
+  
+        Class   Prod. Acc.    User Acc.          Prod. Acc.           User Acc.  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+       阔叶林        96.28        97.66             751/780             751/769  
+         灌木        98.61        50.39           1278/1296           1278/2536  
+         草地         0.00         0.00               0/465                0/15  
+         裸地         0.00         0.00               0/779                 0/0  
+

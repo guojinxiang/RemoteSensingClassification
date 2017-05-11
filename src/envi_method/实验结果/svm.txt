@@ -1,0 +1,41 @@
+Confusion Matrix: C:\Users\left thomas\Desktop\GF1_201412_jiangsu_lindi_ortho_class  
+  
+Overall Accuracy = (3299/3320)  99.3675%  
+Kappa Coefficient = 0.9912  
+  
+                  Ground Truth (Pixels)  
+    Class           阔叶林         灌木         草地         裸地        Total  
+ Unclassified            0            0            0            0            0  
+       阔叶林          780           17            0            2          799  
+         灌木            0         1279            0            0         1279  
+         草地            0            0          463            0          463  
+         裸地            0            0            2          777          779  
+        Total          780         1296          465          779         3320  
+  
+  
+                 Ground Truth (Percent)  
+    Class           阔叶林         灌木         草地         裸地        Total  
+ Unclassified         0.00         0.00         0.00         0.00         0.00  
+       阔叶林       100.00         1.31         0.00         0.26        24.07  
+         灌木         0.00        98.69         0.00         0.00        38.52  
+         草地         0.00         0.00        99.57         0.00        13.95  
+         裸地         0.00         0.00         0.43        99.74        23.46  
+        Total       100.00       100.00       100.00       100.00       100.00  
+  
+  
+  
+        Class   Commission     Omission          Commission            Omission  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+       阔叶林         2.38         0.00              19/799               0/780  
+         灌木         0.00         1.31              0/1279             17/1296  
+         草地         0.00         0.43               0/463               2/465  
+         裸地         0.26         0.26               2/779               2/779  
+  
+  
+        Class   Prod. Acc.    User Acc.          Prod. Acc.           User Acc.  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+       阔叶林       100.00        97.62             780/780             780/799  
+         灌木        98.69       100.00           1279/1296           1279/1279  
+         草地        99.57       100.00             463/465             463/463  
+         裸地        99.74        99.74             777/779             777/779  
+
