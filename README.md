@@ -1,2 +1,2 @@
-# remote_sensing_classification
+# RemoteSensingClassification
 本科毕设时做的遥感影像分类
